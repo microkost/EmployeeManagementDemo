@@ -28,42 +28,40 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dpmDataGridView = new System.Windows.Forms.DataGridView();
+            this.empDataGridView = new System.Windows.Forms.DataGridView();
             this.buttonRefresh = new System.Windows.Forms.Button();
             this.buttonSave = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.buttonEdit = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.textBoxAdd = new System.Windows.Forms.TextBox();
             this.buttonDelete = new System.Windows.Forms.Button();
-            this.buttonAdd = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            ((System.ComponentModel.ISupportInitialize)(this.dpmDataGridView)).BeginInit();
+            this.buttonAdd = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.empDataGridView)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // dpmDataGridView
+            // empDataGridView
             // 
-            this.dpmDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.empDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dpmDataGridView.BackgroundColor = System.Drawing.Color.SeaGreen;
-            this.dpmDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dpmDataGridView.Cursor = System.Windows.Forms.Cursors.Default;
-            this.dpmDataGridView.Location = new System.Drawing.Point(0, 2);
-            this.dpmDataGridView.Margin = new System.Windows.Forms.Padding(2);
-            this.dpmDataGridView.MultiSelect = false;
-            this.dpmDataGridView.Name = "dpmDataGridView";
-            this.dpmDataGridView.RowTemplate.Height = 24;
-            this.dpmDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dpmDataGridView.Size = new System.Drawing.Size(780, 359);
-            this.dpmDataGridView.TabIndex = 0;
+            this.empDataGridView.BackgroundColor = System.Drawing.Color.SeaGreen;
+            this.empDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.empDataGridView.Cursor = System.Windows.Forms.Cursors.Default;
+            this.empDataGridView.Location = new System.Drawing.Point(0, 2);
+            this.empDataGridView.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.empDataGridView.MultiSelect = false;
+            this.empDataGridView.Name = "empDataGridView";
+            this.empDataGridView.RowTemplate.Height = 24;
+            this.empDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.empDataGridView.Size = new System.Drawing.Size(1040, 442);
+            this.empDataGridView.TabIndex = 0;
             // 
             // buttonRefresh
             // 
-            this.buttonRefresh.Location = new System.Drawing.Point(9, 8);
-            this.buttonRefresh.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonRefresh.Location = new System.Drawing.Point(12, 10);
+            this.buttonRefresh.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonRefresh.Name = "buttonRefresh";
-            this.buttonRefresh.Size = new System.Drawing.Size(75, 41);
+            this.buttonRefresh.Size = new System.Drawing.Size(100, 50);
             this.buttonRefresh.TabIndex = 2;
             this.buttonRefresh.Text = "Refresh";
             this.buttonRefresh.UseVisualStyleBackColor = true;
@@ -71,10 +69,10 @@
             // 
             // buttonSave
             // 
-            this.buttonSave.Location = new System.Drawing.Point(694, 8);
-            this.buttonSave.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonSave.Location = new System.Drawing.Point(925, 10);
+            this.buttonSave.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonSave.Name = "buttonSave";
-            this.buttonSave.Size = new System.Drawing.Size(75, 41);
+            this.buttonSave.Size = new System.Drawing.Size(100, 50);
             this.buttonSave.TabIndex = 4;
             this.buttonSave.Text = "Save";
             this.buttonSave.UseVisualStyleBackColor = true;
@@ -85,94 +83,74 @@
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.Controls.Add(this.buttonEdit);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.textBoxAdd);
             this.panel1.Controls.Add(this.buttonDelete);
             this.panel1.Controls.Add(this.buttonAdd);
             this.panel1.Controls.Add(this.buttonRefresh);
             this.panel1.Controls.Add(this.buttonSave);
-            this.panel1.Location = new System.Drawing.Point(0, 366);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2);
+            this.panel1.Location = new System.Drawing.Point(0, 450);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(780, 63);
+            this.panel1.Size = new System.Drawing.Size(1040, 78);
             this.panel1.TabIndex = 6;
             // 
             // buttonEdit
             // 
-            this.buttonEdit.Location = new System.Drawing.Point(88, 8);
-            this.buttonEdit.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonEdit.Location = new System.Drawing.Point(117, 10);
+            this.buttonEdit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonEdit.Name = "buttonEdit";
-            this.buttonEdit.Size = new System.Drawing.Size(75, 41);
+            this.buttonEdit.Size = new System.Drawing.Size(100, 50);
             this.buttonEdit.TabIndex = 9;
             this.buttonEdit.Text = "Edit selected";
             this.buttonEdit.UseVisualStyleBackColor = true;
             this.buttonEdit.Click += new System.EventHandler(this.buttonEdit_Click);
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(303, 22);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(109, 13);
-            this.label1.TabIndex = 8;
-            this.label1.Text = "New employer name: ";
-            // 
-            // textBoxAdd
-            // 
-            this.textBoxAdd.Location = new System.Drawing.Point(414, 19);
-            this.textBoxAdd.Margin = new System.Windows.Forms.Padding(2);
-            this.textBoxAdd.Name = "textBoxAdd";
-            this.textBoxAdd.Size = new System.Drawing.Size(118, 20);
-            this.textBoxAdd.TabIndex = 7;
-            // 
             // buttonDelete
             // 
-            this.buttonDelete.Location = new System.Drawing.Point(615, 8);
-            this.buttonDelete.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonDelete.Location = new System.Drawing.Point(820, 10);
+            this.buttonDelete.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonDelete.Name = "buttonDelete";
-            this.buttonDelete.Size = new System.Drawing.Size(75, 41);
+            this.buttonDelete.Size = new System.Drawing.Size(100, 50);
             this.buttonDelete.TabIndex = 6;
             this.buttonDelete.Text = "Delete";
             this.buttonDelete.UseVisualStyleBackColor = true;
             this.buttonDelete.Click += new System.EventHandler(this.buttonDelete_Click);
-            // 
-            // buttonAdd
-            // 
-            this.buttonAdd.Location = new System.Drawing.Point(536, 8);
-            this.buttonAdd.Margin = new System.Windows.Forms.Padding(2);
-            this.buttonAdd.Name = "buttonAdd";
-            this.buttonAdd.Size = new System.Drawing.Size(75, 41);
-            this.buttonAdd.TabIndex = 5;
-            this.buttonAdd.Text = "Add";
-            this.buttonAdd.UseVisualStyleBackColor = true;
-            this.buttonAdd.Click += new System.EventHandler(this.buttonAdd_Click);
             // 
             // menuStrip1
             // 
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(780, 24);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
+            this.menuStrip1.Size = new System.Drawing.Size(1040, 24);
             this.menuStrip1.TabIndex = 7;
             this.menuStrip1.Text = "menuStrip1";
             // 
+            // buttonAdd
+            // 
+            this.buttonAdd.Location = new System.Drawing.Point(714, 10);
+            this.buttonAdd.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.buttonAdd.Name = "buttonAdd";
+            this.buttonAdd.Size = new System.Drawing.Size(100, 50);
+            this.buttonAdd.TabIndex = 5;
+            this.buttonAdd.Text = "Add new";
+            this.buttonAdd.UseVisualStyleBackColor = true;
+            this.buttonAdd.Click += new System.EventHandler(this.buttonAdd_Click);
+            // 
             // FormEmployees
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(780, 424);
-            this.Controls.Add(this.dpmDataGridView);
+            this.ClientSize = new System.Drawing.Size(1040, 522);
+            this.Controls.Add(this.empDataGridView);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FormEmployees";
             this.Text = "Employees management window";
             this.Leave += new System.EventHandler(this.FormDepartment_OnClose);
-            ((System.ComponentModel.ISupportInitialize)(this.dpmDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.empDataGridView)).EndInit();
             this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -180,15 +158,13 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dpmDataGridView;
+        private System.Windows.Forms.DataGridView empDataGridView;
         private System.Windows.Forms.Button buttonRefresh;
         private System.Windows.Forms.Button buttonSave;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button buttonAdd;
         private System.Windows.Forms.Button buttonDelete;
         private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.TextBox textBoxAdd;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button buttonEdit;
+        private System.Windows.Forms.Button buttonAdd;
     }
 }

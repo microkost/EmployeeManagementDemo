@@ -59,6 +59,10 @@
     <Compile Include="Migrations\201709201612536_DepartEmplo.Designer.cs">
       <DependentUpon>201709201612536_DepartEmplo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201709201921442_ExtendingEmployees1.cs" />
+    <Compile Include="Migrations\201709201921442_ExtendingEmployees1.Designer.cs">
+      <DependentUpon>201709201921442_ExtendingEmployees1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -80,6 +84,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201709201612536_DepartEmplo.resx">
       <DependentUpon>201709201612536_DepartEmplo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709201921442_ExtendingEmployees1.resx">
+      <DependentUpon>201709201921442_ExtendingEmployees1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

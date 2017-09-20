@@ -19,6 +19,11 @@ namespace SoloDemoData
             ctx = new CompanyContext();
         }
 
+        public DepartmentRepository GetDepRep()
+        {
+            return this;
+        }
+
         public SoloDepartment SelectById(int id)
         {
             return ctx.Departments.Find(id);
@@ -33,14 +38,6 @@ namespace SoloDemoData
         public ICollection<SoloDepartment> GetAll()
         {
             return ctx.Departments.ToList();
-
-            /*
-             * System.InvalidOperationException occurred  HResult=0x80131509
-               The property 'DepartmentId' cannot be configured as a navigation property. The property must be a valid entity type and the 
-               property should have a non-abstract getter and setter. For collection properties the type must implement ICollection<T> 
-               where T is a valid entity type. Source=<Cannot evaluate the exception source>  
-
-             */
         }
 
         public SoloDepartment GetByID(int id)
@@ -65,7 +62,7 @@ namespace SoloDemoData
             //alternatively
             //Delete(obj.IDdpm);
             //Insert(obj);
-        }        
+        }
 
         protected virtual void Dispose(bool disposing)
         {

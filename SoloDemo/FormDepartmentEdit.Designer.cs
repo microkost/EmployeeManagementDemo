@@ -1,6 +1,6 @@
 ﻿namespace SoloDemo
 {
-    partial class FormDepartmentEdit
+    partial class FormDepartementEdit
     {
         /// <summary>
         /// Required designer variable.

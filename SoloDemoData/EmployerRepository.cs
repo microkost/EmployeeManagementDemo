@@ -1,6 +1,7 @@
 ﻿using SoloDemoDomain;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity.Migrations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -42,8 +43,7 @@ namespace SoloDemoData
 
         public ICollection<SoloEmployer> GetAll()
         {
-            //return ctx.Employees.ToList();
-            return null;
+            return ctx.Employees.ToList();            
         }
 
         public SoloEmployer GetByID(int id)
@@ -54,22 +54,23 @@ namespace SoloDemoData
 
         public void Insert(SoloEmployer obj)
         {
-            throw new NotImplementedException();
+            ctx.Employees.Add(obj);
         }
 
         public void Save()
         {
-            throw new NotImplementedException();
-        }
+            //should be try-catch when CONSTRAINT occured etc.
+            ctx.SaveChanges();
+        }  
 
         public SoloEmployer SelectById(int id)
         {
-            throw new NotImplementedException();
+            return ctx.Employees.Find(id);
         }
 
         public void Update(SoloEmployer obj)
         {
-            throw new NotImplementedException();
+            ctx.Set<SoloEmployer>().AddOrUpdate(obj);
         }
     }
 }

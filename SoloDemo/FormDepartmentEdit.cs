@@ -12,13 +12,13 @@ using SoloDemoData;
 
 namespace SoloDemo
 {
-    public partial class FormDepartmentEdit : Form
+    public partial class FormDepartementEdit : Form
     {
         private SoloDepartment sd;
         private DepartmentRepository departmentRepository;
         private int SelectedIndex;
 
-        public FormDepartmentEdit(DepartmentRepository departmentRepository, int v)
+        public FormDepartementEdit(DepartmentRepository departmentRepository, int v)
         {
             InitializeComponent();
             this.departmentRepository = departmentRepository;

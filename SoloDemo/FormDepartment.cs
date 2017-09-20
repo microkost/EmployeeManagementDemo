@@ -92,7 +92,7 @@ namespace SoloDemo
 
         private void buttonEdit_Click(object sender, EventArgs e)
         {            
-            Form FormDepartementEdit = new FormDepartmentEdit(dpmRepo, selectedRowDBindex());
+            Form FormDepartementEdit = new FormDepartementEdit(dpmRepo, selectedRowDBindex());
             FormDepartementEdit.ShowDialog(); //dialog waits for respond!
             dpmRepo.Save();            
             RefreshGui();

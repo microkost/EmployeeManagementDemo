@@ -15,11 +15,11 @@ namespace SoloDemoDomain
         public string Name1 { get; set; }
         public string Name2 { get; set; }
         public string Name3 { get; set; }
-       
+        public string Email { get; set; }
+
         [ForeignKey("Department")]
         public int IDdmp { get; set; }
         public virtual SoloDepartment Department { get; set; }
-
 
     }
 }
