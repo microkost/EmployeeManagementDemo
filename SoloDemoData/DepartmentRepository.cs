@@ -6,6 +6,7 @@ using System.Data.Entity.Migrations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace SoloDemoData
 {
@@ -17,6 +18,14 @@ namespace SoloDemoData
         public DepartmentRepository()
         {
             ctx = new CompanyContext();
+        }
+
+        public BindingSource getComboBoxSource() //not the best design, using windows form component
+        {
+            DepartmentRepository dpmRepo = new DepartmentRepository();
+            BindingSource bindingSource1 = new BindingSource(); //saves space in code    
+            bindingSource1.DataSource = dpmRepo.GetAll().ToList();
+            return bindingSource1;
         }
 
         public DepartmentRepository GetDepRep()

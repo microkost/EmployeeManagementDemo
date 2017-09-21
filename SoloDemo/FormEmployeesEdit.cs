@@ -14,21 +14,19 @@ namespace SoloDemo
 {
     public partial class FormEmployeesEdit : Form
     {
-        private SoloEmployer se;        
+        private SoloEmployer se;
+        private int SelectedEmpIndex;
         private EmployerRepository employerRepository;
-
         private DepartmentRepository dpmRepo;        
-
-        private int SelectedIndex;
+        
 
         public FormEmployeesEdit() //adding
         {
             InitializeComponent();
             employerRepository = new EmployerRepository();
             se = new SoloEmployer();
-            dpmRepo = new DepartmentRepository(); //contains data
 
-            comboBoxDep.DataSource = PrepareComboBox();
+            comboBoxDep.DataSource = dpmRepo.getComboBoxSource();
             comboBoxDep.DisplayMember = "Name";
             comboBoxDep.ValueMember = "IDdpm";
         }
@@ -36,18 +34,17 @@ namespace SoloDemo
         public FormEmployeesEdit(EmployerRepository employerRepository, int index) //editing
         {
             InitializeComponent();            
-            this.SelectedIndex = index;
+            this.SelectedEmpIndex = index;
             employerRepository = new EmployerRepository();
-            se = new SoloEmployer();
-            dpmRepo = new DepartmentRepository(); //contains data
+            se = new SoloEmployer();            
 
-            se = employerRepository.SelectById(SelectedIndex);            
-            labelID.Text = String.Format("ID of emloyer: {0}", SelectedIndex);
+            se = employerRepository.SelectById(SelectedEmpIndex);            
+            labelID.Text = String.Format("ID of emloyer: {0}", SelectedEmpIndex);
             textBoxName1.Text = se.Name1;
             textBoxName2.Text = se.Name2;
             textBoxName3.Text = se.Name3;
             textBoxEmail.Text = se.Email;
-            comboBoxDep.DataSource = PrepareComboBox();
+            comboBoxDep.DataSource = dpmRepo.getComboBoxSource();
             comboBoxDep.DisplayMember = "Name";
             comboBoxDep.ValueMember = "IDdpm";
         }
@@ -68,16 +65,6 @@ namespace SoloDemo
             }
         }
 
-        private BindingSource PrepareComboBox()
-        {            
-            if (dpmRepo == null)
-            {
-                return null;
-            }
-                                                            
-            BindingSource bindingSource1 = new BindingSource(); //saves space in code    
-            bindingSource1.DataSource = dpmRepo.GetAll().ToList();
-            return bindingSource1;                     
-        }
+
     }
 }
