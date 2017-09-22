@@ -16,27 +16,30 @@ namespace SoloDemo
     {
         private SoloEmployer se;
         private int SelectedEmpIndex;
-        private EmployerRepository employerRepository;
-        private DepartmentRepository dpmRepo;        
-        
+        private EmployerRepository empRepo;
+        private DepartmentRepository dpmRepo;                
 
-        public FormEmployeesEdit() //adding
+        public FormEmployeesEdit(DepartmentRepository repositoryOfDepartments) //adding
         {
             InitializeComponent();
-            employerRepository = new EmployerRepository();
-            se = new SoloEmployer();
+            empRepo = new EmployerRepository();
+            se = new SoloEmployer();            
+            this.dpmRepo = repositoryOfDepartments;
 
-            comboBoxDep.DataSource = dpmRepo.getComboBoxSource();
+            comboBoxDep.DataSource = repositoryOfDepartments.getComboBoxSource();
             comboBoxDep.DisplayMember = "Name";
             comboBoxDep.ValueMember = "IDdpm";
         }
 
-        public FormEmployeesEdit(EmployerRepository employerRepository, int index) //editing
+        public FormEmployeesEdit(EmployerRepository employerRepository, DepartmentRepository repositoryOfDepartments, int index) //editing
         {
-            InitializeComponent();            
-            this.SelectedEmpIndex = index;
+            se = new SoloEmployer();
             employerRepository = new EmployerRepository();
-            se = new SoloEmployer();            
+
+            InitializeComponent();            
+            this.SelectedEmpIndex = index;            
+            this.empRepo = employerRepository;            
+            this.dpmRepo = repositoryOfDepartments;            
 
             se = employerRepository.SelectById(SelectedEmpIndex);            
             labelID.Text = String.Format("ID of emloyer: {0}", SelectedEmpIndex);
@@ -51,7 +54,7 @@ namespace SoloDemo
 
         private void buttonSubmit_Click(object sender, EventArgs e)
         {
-            if (employerRepository != null)
+            if (1 == 1 /*empRepo != null*/)
             {
                 se.Name1 = textBoxName1.Text.ToString();
                 se.Name2 = textBoxName2.Text.ToString();
@@ -59,8 +62,8 @@ namespace SoloDemo
                 se.Email = textBoxEmail.Text.ToString();
                 se.IDdmp = Int32.Parse(comboBoxDep.SelectedValue.ToString());
 
-                employerRepository.Update(se);
-                employerRepository.Save();
+                empRepo.Update(se);
+                empRepo.Save();
                 Close();
             }
         }

@@ -71,29 +71,29 @@
             this.textBoxName2.Location = new System.Drawing.Point(118, 74);
             this.textBoxName2.Name = "textBoxName2";
             this.textBoxName2.Size = new System.Drawing.Size(194, 22);
-            this.textBoxName2.TabIndex = 3;
+            this.textBoxName2.TabIndex = 2;
             // 
             // textBoxName3
             // 
             this.textBoxName3.Location = new System.Drawing.Point(118, 102);
             this.textBoxName3.Name = "textBoxName3";
             this.textBoxName3.Size = new System.Drawing.Size(194, 22);
-            this.textBoxName3.TabIndex = 4;
+            this.textBoxName3.TabIndex = 3;
             // 
             // comboBoxDep
             // 
             this.comboBoxDep.FormattingEnabled = true;
-            this.comboBoxDep.Location = new System.Drawing.Point(118, 131);
+            this.comboBoxDep.Location = new System.Drawing.Point(118, 158);
             this.comboBoxDep.Name = "comboBoxDep";
             this.comboBoxDep.Size = new System.Drawing.Size(194, 24);
             this.comboBoxDep.TabIndex = 5;
             // 
             // textBoxEmail
             // 
-            this.textBoxEmail.Location = new System.Drawing.Point(118, 162);
+            this.textBoxEmail.Location = new System.Drawing.Point(118, 130);
             this.textBoxEmail.Name = "textBoxEmail";
             this.textBoxEmail.Size = new System.Drawing.Size(194, 22);
-            this.textBoxEmail.TabIndex = 6;
+            this.textBoxEmail.TabIndex = 4;
             // 
             // label2
             // 
@@ -125,7 +125,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(30, 134);
+            this.label5.Location = new System.Drawing.Point(30, 161);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(82, 17);
             this.label5.TabIndex = 10;
@@ -134,7 +134,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(70, 165);
+            this.label6.Location = new System.Drawing.Point(70, 133);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(42, 17);
             this.label6.TabIndex = 11;
@@ -145,7 +145,7 @@
             this.buttonSubmit.Location = new System.Drawing.Point(118, 191);
             this.buttonSubmit.Name = "buttonSubmit";
             this.buttonSubmit.Size = new System.Drawing.Size(194, 37);
-            this.buttonSubmit.TabIndex = 12;
+            this.buttonSubmit.TabIndex = 6;
             this.buttonSubmit.Text = "Submit";
             this.buttonSubmit.UseVisualStyleBackColor = true;
             this.buttonSubmit.Click += new System.EventHandler(this.buttonSubmit_Click);

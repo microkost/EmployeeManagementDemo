@@ -40,6 +40,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.textBoxDBDataSource = new System.Windows.Forms.TextBox();
             this.buttonDepartements = new System.Windows.Forms.Button();
+            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -66,16 +67,15 @@
             this.groupBox1.Controls.Add(this.textBoxDBuserID);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.textBoxDBDataSource);
-            this.groupBox1.Location = new System.Drawing.Point(12, 116);
+            this.groupBox1.Location = new System.Drawing.Point(12, 121);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.groupBox1.Size = new System.Drawing.Size(453, 174);
+            this.groupBox1.Size = new System.Drawing.Size(453, 169);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Connection details";
-            this.groupBox1.Visible = false;
             // 
             // label4
             // 
@@ -115,7 +115,6 @@
             this.textBoxDBpass.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.textBoxDBpass.Size = new System.Drawing.Size(335, 22);
             this.textBoxDBpass.TabIndex = 5;
-            this.textBoxDBpass.Text = "SoloAdminDemo&";
             this.textBoxDBpass.UseSystemPasswordChar = true;
             // 
             // buttonConnect
@@ -125,8 +124,9 @@
             this.buttonConnect.Name = "buttonConnect";
             this.buttonConnect.Size = new System.Drawing.Size(141, 30);
             this.buttonConnect.TabIndex = 4;
-            this.buttonConnect.Text = "Connect";
+            this.buttonConnect.Text = "Test connection";
             this.buttonConnect.UseVisualStyleBackColor = true;
+            this.buttonConnect.Click += new System.EventHandler(this.buttonConnect_Click);
             // 
             // label2
             // 
@@ -166,7 +166,7 @@
             this.textBoxDBDataSource.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.textBoxDBDataSource.Size = new System.Drawing.Size(335, 22);
             this.textBoxDBDataSource.TabIndex = 0;
-            this.textBoxDBDataSource.Text = "http://solodemo.database.windows.net";
+            this.textBoxDBDataSource.Text = "solodemo.database.windows.net";
             // 
             // buttonDepartements
             // 
@@ -178,6 +178,11 @@
             this.buttonDepartements.Text = "Departements";
             this.buttonDepartements.UseVisualStyleBackColor = true;
             this.buttonDepartements.Click += new System.EventHandler(this.buttonDepartements_Click);
+            // 
+            // saveFileDialog1
+            // 
+            this.saveFileDialog1.DefaultExt = "config";
+            this.saveFileDialog1.FileName = "ConnectionString";
             // 
             // FormHome
             // 
@@ -210,6 +215,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox textBoxDBpass;
         private System.Windows.Forms.Button buttonDepartements;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
     }
 }
 

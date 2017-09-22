@@ -69,7 +69,7 @@ namespace SoloDemoData
         }
 
         public void Update(SoloEmployer obj)
-        {
+        {            
             ctx.Set<SoloEmployer>().AddOrUpdate(obj);
         }
     }
