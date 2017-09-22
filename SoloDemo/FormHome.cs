@@ -24,20 +24,34 @@ namespace SoloDemo
         private void buttonEmployees_Click(object sender, EventArgs e)
         {
             Form employees = new FormEmployees();
-            employees.ShowDialog();
+            try
+            {
+                employees.ShowDialog();
+            }
+            catch
+            {
+                MessageBox.Show("Connection failed, check connectivity to database or place of connection string", "Database connection message");
+            }
         }
 
         private void buttonDepartements_Click(object sender, EventArgs e)
         {
             Form departement = new FormDepartment();
-            departement.ShowDialog();
+            try
+            {
+                departement.ShowDialog();
+            }
+            catch
+            {
+                MessageBox.Show("Connection failed, check connectivity to database or place of connection string", "Database connection message");
+            }
         }
 
         private void buttonConnect_Click(object sender, EventArgs e)
         {
             string header = @"<connectionStrings><clear/><add name=""solodemo"" connectionString=""";
             string conns = string.Format("Data Source={0};Initial Catalog={1};Persist Security Info=True;User ID={2}; Password={3};", textBoxDBDataSource.Text, textBoxDBcatalog.Text, textBoxDBuserID.Text, textBoxDBpass.Text);
-            string footer = @""" providerName = ""System.Data.SqlClient"" /></ connectionStrings >";            
+            string footer = @""" providerName = ""System.Data.SqlClient"" /></ connectionStrings >";
 
             saveFileDialog1.FileName = "ConnectionString";
             saveFileDialog1.DefaultExt = "config";
@@ -45,7 +59,7 @@ namespace SoloDemo
             saveFileDialog1.Filter = "config files (*.config)|";
             saveFileDialog1.ShowDialog();
             string name = saveFileDialog1.FileName;
-            File.WriteAllText(name, header+conns+footer);
+            File.WriteAllText(name, header + conns + footer);
 
             try
             {
@@ -58,7 +72,7 @@ namespace SoloDemo
             catch (Exception)
             {
                 MessageBox.Show("Connection failed", "Database connection message");
-            }                        
+            }
 
         }
     }

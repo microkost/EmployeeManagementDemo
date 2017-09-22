@@ -35,6 +35,9 @@
             this.buttonDelete = new System.Windows.Forms.Button();
             this.buttonAdd = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.textBoxSearch = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.empDataGridView)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -51,7 +54,6 @@
             this.empDataGridView.Cursor = System.Windows.Forms.Cursors.Default;
             this.empDataGridView.Location = new System.Drawing.Point(0, 2);
             this.empDataGridView.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.empDataGridView.MultiSelect = false;
             this.empDataGridView.Name = "empDataGridView";
             this.empDataGridView.ReadOnly = true;
             this.empDataGridView.RowTemplate.Height = 24;
@@ -61,7 +63,7 @@
             // 
             // buttonRefresh
             // 
-            this.buttonRefresh.Location = new System.Drawing.Point(12, 10);
+            this.buttonRefresh.Location = new System.Drawing.Point(415, 10);
             this.buttonRefresh.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonRefresh.Name = "buttonRefresh";
             this.buttonRefresh.Size = new System.Drawing.Size(100, 50);
@@ -74,6 +76,9 @@
             // 
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.textBoxSearch);
             this.panel1.Controls.Add(this.buttonEdit);
             this.panel1.Controls.Add(this.buttonDelete);
             this.panel1.Controls.Add(this.buttonAdd);
@@ -127,6 +132,33 @@
             this.menuStrip1.TabIndex = 7;
             this.menuStrip1.Text = "menuStrip1";
             // 
+            // textBoxSearch
+            // 
+            this.textBoxSearch.Location = new System.Drawing.Point(76, 24);
+            this.textBoxSearch.Name = "textBoxSearch";
+            this.textBoxSearch.Size = new System.Drawing.Size(227, 22);
+            this.textBoxSearch.TabIndex = 6;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(309, 10);
+            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(100, 50);
+            this.button1.TabIndex = 7;
+            this.button1.Text = "Search";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(13, 28);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(57, 17);
+            this.label1.TabIndex = 8;
+            this.label1.Text = "Search:";
+            // 
             // FormEmployees
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -142,6 +174,7 @@
             this.Leave += new System.EventHandler(this.FormDepartment_OnClose);
             ((System.ComponentModel.ISupportInitialize)(this.empDataGridView)).EndInit();
             this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -156,5 +189,8 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.Button buttonEdit;
         private System.Windows.Forms.Button buttonAdd;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox textBoxSearch;
     }
 }

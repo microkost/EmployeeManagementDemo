@@ -16,7 +16,6 @@ namespace SoloDemo
     {
 
         private DepartmentRepository dpmRepo;        
-
         public FormDepartment()
         {
             InitializeComponent();
@@ -26,6 +25,18 @@ namespace SoloDemo
 
         public void RefreshGui()
         {
+            //flushing is not happening in this variant of form refilling
+
+            int selectedRowComfortGui; //for user comfort                
+            try
+            {
+                selectedRowComfortGui = dpmDataGridView.CurrentCell.RowIndex;
+            }
+            catch
+            {
+                selectedRowComfortGui = 0;
+            }
+
             if (dpmRepo != null)
             {
                 var departments = dpmRepo.GetAll();                
@@ -35,11 +46,12 @@ namespace SoloDemo
                 dpmDataGridView.Columns[2].DataPropertyName = "Employees";
                 dpmDataGridView.Columns[2].Visible = false; //foreign key is not showing to user                
             }
+
+            dpmDataGridView.Rows[selectedRowComfortGui].Selected = true;
         }
 
         private void buttonRefresh_Click(object sender, EventArgs e)
-        {
-            //flush previous?
+        {            
             RefreshGui();
         }
 

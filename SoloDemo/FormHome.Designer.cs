@@ -41,15 +41,16 @@
             this.textBoxDBDataSource = new System.Windows.Forms.TextBox();
             this.buttonDepartements = new System.Windows.Forms.Button();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
+            this.label5 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // buttonEmployees
             // 
-            this.buttonEmployees.Location = new System.Drawing.Point(12, 12);
+            this.buttonEmployees.Location = new System.Drawing.Point(12, 42);
             this.buttonEmployees.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonEmployees.Name = "buttonEmployees";
-            this.buttonEmployees.Size = new System.Drawing.Size(171, 30);
+            this.buttonEmployees.Size = new System.Drawing.Size(220, 30);
             this.buttonEmployees.TabIndex = 0;
             this.buttonEmployees.Text = "Employees";
             this.buttonEmployees.UseVisualStyleBackColor = true;
@@ -170,10 +171,10 @@
             // 
             // buttonDepartements
             // 
-            this.buttonDepartements.Location = new System.Drawing.Point(189, 11);
+            this.buttonDepartements.Location = new System.Drawing.Point(245, 42);
             this.buttonDepartements.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonDepartements.Name = "buttonDepartements";
-            this.buttonDepartements.Size = new System.Drawing.Size(171, 30);
+            this.buttonDepartements.Size = new System.Drawing.Size(220, 30);
             this.buttonDepartements.TabIndex = 2;
             this.buttonDepartements.Text = "Departements";
             this.buttonDepartements.UseVisualStyleBackColor = true;
@@ -184,11 +185,21 @@
             this.saveFileDialog1.DefaultExt = "config";
             this.saveFileDialog1.FileName = "ConnectionString";
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(12, 11);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(296, 17);
+            this.label5.TabIndex = 3;
+            this.label5.Text = "Welcome! Select object of management ativity";
+            // 
             // FormHome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(477, 302);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.buttonDepartements);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.buttonEmployees);
@@ -198,6 +209,7 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -216,6 +228,7 @@
         private System.Windows.Forms.TextBox textBoxDBpass;
         private System.Windows.Forms.Button buttonDepartements;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
+        private System.Windows.Forms.Label label5;
     }
 }
 

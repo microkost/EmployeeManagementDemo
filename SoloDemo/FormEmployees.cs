@@ -28,7 +28,7 @@ namespace SoloDemo
         public void RefreshGui()
         {
             empRepo = new EmployerRepository(); //contains data            
-            empRepo.GetAll();
+            empRepo.GetAll();            
 
             if (empRepo != null && dpmRepo != null)
             {
@@ -45,6 +45,7 @@ namespace SoloDemo
                     selectedRowComfortGui = 0;
                 }
 
+                empDataGridView.ClearSelection(); //cleaning previos search
                 empDataGridView.Columns.Clear(); //cleaning previous content
                 empDataGridView.Rows.Clear();  //cleaning previous content
 
@@ -165,5 +166,39 @@ namespace SoloDemo
             empRepo.Save();
             empRepo.Dispose();
         }
+
+
+        private void button1_Click(object sender, EventArgs e) //SEARCH IN DATAGRIDVIEW IN C#
+        {
+            int selectedItems = 0;
+            empDataGridView.ClearSelection(); //cleaning previos search            
+            empDataGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            empDataGridView.MultiSelect = true;            
+
+            foreach (DataGridViewRow row in empDataGridView.Rows) //algorithm is checking cells in column order in every row in table
+            {                
+                for (int columnIndex = 0; columnIndex < empDataGridView.Columns.Count; columnIndex++) //columns listing
+                {
+                    if (row.Cells[columnIndex] is DataGridViewTextBoxCell) //cant look for Combobox and others, only textboxes
+                    {
+                        if (row.Cells[columnIndex].Value.ToString().ToLower().Equals(textBoxSearch.Text.ToLower())) //removes case sensibility
+                        {
+                            columnIndex = row.Index;
+                            empDataGridView.Rows[columnIndex].Selected = true;
+                            selectedItems++;
+                            columnIndex++;
+                            break;
+                        }
+                    }
+                }
+            }
+
+            if(selectedItems == 0)
+            {
+                MessageBox.Show("Sorry, query '" + textBoxSearch.Text + "' wasn't found", "Search results");
+            }
+            
+        }
     }
 }
+

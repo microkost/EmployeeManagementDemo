@@ -7,3 +7,5 @@ Connection string to DB is not included in repository! File ConnectionString.con
   <add name="XXX"
        connectionString="Data Source=XXX.database.windows.net;Initial Catalog=XXX;Persist Security Info=True;User ID=XXX; Password=XXX" providerName="System.Data.SqlClient" />
 </connectionStrings>
+
+SQL DDL commands will be also added later
