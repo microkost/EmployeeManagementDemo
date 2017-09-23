@@ -79,7 +79,8 @@ namespace SoloDemo
 
         private void buttonDelete_Click(object sender, EventArgs e)
         {
-           if (dpmDataGridView.SelectedRows.Count == 0)
+            dpmRepo.Save();
+            if (dpmDataGridView.SelectedRows.Count == 0)
             {
                 return;
             } 

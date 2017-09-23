@@ -65,6 +65,13 @@ namespace SoloDemoData
             return ctx.Salaries.Find(id);
         }
 
+        public SoloSalary SelectByIdEmp(int idemp) //NOT WORKING WELL!
+        {
+            // Query for the SoloSalary entry with IDemp 
+            var sal = ctx.Salaries.Where(b => b.IDemp == idemp).FirstOrDefault();
+            return sal;
+        }
+
         public void Update(SoloSalary obj)
         {
             ctx.Set<SoloSalary>().AddOrUpdate(obj);

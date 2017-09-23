@@ -1,0 +1,8 @@
+#Rename this file ConnectionString.config
+#remove lines with '#'
+#replace XXX in ConnectionString below by real information or use in-app configurator
+#enjoy
+<connectionStrings>
+  <clear/>
+  <add name="XXX" connectionString="Data Source=XXX.database.windows.net;Initial Catalog=XXX;Persist Security Info=True;User ID=XXX; Password=XXX" providerName="System.Data.SqlClient" />
+</connectionStrings>

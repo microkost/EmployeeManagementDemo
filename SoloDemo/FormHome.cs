@@ -88,5 +88,18 @@ namespace SoloDemo
                 MessageBox.Show("Connection failed, check connectivity to database or place of connection string", "Database connection message");
             }
         }
+
+        private void buttonReport_Click(object sender, EventArgs e)
+        {
+            Form reporting = new FormReports();
+            try
+            {
+                reporting.ShowDialog();
+            }
+            catch
+            {
+                MessageBox.Show("Connection failed, check connectivity to database or place of connection string", "Database connection message");
+            }
+        }
     }
 }

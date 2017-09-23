@@ -183,7 +183,7 @@ namespace SoloDemo
                 {
                     if (row.Cells[columnIndex] is DataGridViewTextBoxCell) //cant look for Combobox and others, only textboxes
                     {
-                        if (row.Cells[columnIndex].Value.ToString().ToLower().Equals(textBoxSearch.Text.ToLower())) //removes case sensibility
+                        if (row.Cells[columnIndex].Value.ToString().ToLower().Contains(textBoxSearch.Text.ToLower())) //removes case sensibility
                         {
                             columnIndex = row.Index;
                             empDataGridView.Rows[columnIndex].Selected = true;
