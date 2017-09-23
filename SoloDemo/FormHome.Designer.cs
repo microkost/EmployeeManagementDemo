@@ -42,6 +42,7 @@
             this.buttonDepartements = new System.Windows.Forms.Button();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.label5 = new System.Windows.Forms.Label();
+            this.buttonSalary = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -194,11 +195,23 @@
             this.label5.TabIndex = 3;
             this.label5.Text = "Welcome! Select object of management ativity";
             // 
+            // buttonSalary
+            // 
+            this.buttonSalary.Location = new System.Drawing.Point(12, 80);
+            this.buttonSalary.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.buttonSalary.Name = "buttonSalary";
+            this.buttonSalary.Size = new System.Drawing.Size(220, 30);
+            this.buttonSalary.TabIndex = 4;
+            this.buttonSalary.Text = "Salaries";
+            this.buttonSalary.UseVisualStyleBackColor = true;
+            this.buttonSalary.Click += new System.EventHandler(this.buttonSalary_Click);
+            // 
             // FormHome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(477, 302);
+            this.Controls.Add(this.buttonSalary);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.buttonDepartements);
             this.Controls.Add(this.groupBox1);
@@ -229,6 +242,7 @@
         private System.Windows.Forms.Button buttonDepartements;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button buttonSalary;
     }
 }
 

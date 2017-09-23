@@ -168,7 +168,7 @@
             this.Controls.Add(this.textBoxName1);
             this.Controls.Add(this.labelID);
             this.Name = "FormEmployeesEdit";
-            this.Text = "FormEmployeesEdit";
+            this.Text = "Employees (edit or add)";
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -12,11 +12,11 @@ using System.Windows.Forms;
 
 namespace SoloDemo
 {
-    public partial class FormDepartment : Form
+    public partial class FormDepartments : Form
     {
 
         private DepartmentRepository dpmRepo;        
-        public FormDepartment()
+        public FormDepartments()
         {
             InitializeComponent();
             dpmRepo = new DepartmentRepository(); //contains data

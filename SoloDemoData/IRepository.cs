@@ -8,8 +8,7 @@ using System.Threading.Tasks;
 namespace SoloDemoData
 {
     public interface IRepository<T> where T : class
-    {
-        
+    {        
         void Insert(T obj);
         void Update(T obj);
         void Delete(int id);

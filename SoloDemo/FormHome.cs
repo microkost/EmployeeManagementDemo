@@ -36,7 +36,7 @@ namespace SoloDemo
 
         private void buttonDepartements_Click(object sender, EventArgs e)
         {
-            Form departement = new FormDepartment();
+            Form departement = new FormDepartments();
             try
             {
                 departement.ShowDialog();
@@ -74,6 +74,19 @@ namespace SoloDemo
                 MessageBox.Show("Connection failed", "Database connection message");
             }
 
+        }
+
+        private void buttonSalary_Click(object sender, EventArgs e)
+        {
+            Form salaries = new FormSalaries();
+            try
+            {
+                salaries.ShowDialog();
+            }
+            catch
+            {
+                MessageBox.Show("Connection failed, check connectivity to database or place of connection string", "Database connection message");
+            }
         }
     }
 }

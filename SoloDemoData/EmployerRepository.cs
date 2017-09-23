@@ -5,6 +5,7 @@ using System.Data.Entity.Migrations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace SoloDemoData
 {
@@ -41,6 +42,13 @@ namespace SoloDemoData
             this.disposed = true;
         }
 
+        public BindingSource getComboBoxSource()
+        {
+            EmployerRepository empRepo = new EmployerRepository();
+            BindingSource bindingSource1 = new BindingSource(); //saves space in code    
+            bindingSource1.DataSource = empRepo.GetAll().ToList();
+            return bindingSource1;
+        }
         public ICollection<SoloEmployer> GetAll()
         {
             return ctx.Employees.ToList();            

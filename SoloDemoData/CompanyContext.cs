@@ -11,6 +11,7 @@ namespace SoloDemoData
 
         }
         public DbSet<SoloDepartment> Departments { get; set; }
-        public DbSet<SoloEmployer> Employees { get; set; }        
+        public DbSet<SoloEmployer> Employees { get; set; }
+        public DbSet<SoloSalary> Salaries { get; set; }
     }
 }

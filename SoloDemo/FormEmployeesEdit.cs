@@ -17,16 +17,16 @@ namespace SoloDemo
         private SoloEmployer se;
         private int SelectedEmpIndex;
         private EmployerRepository empRepo;
-        private DepartmentRepository dpmRepo;                
+        private DepartmentRepository dpmRepo;
 
         public FormEmployeesEdit(DepartmentRepository repositoryOfDepartments) //adding
         {
             InitializeComponent();
             empRepo = new EmployerRepository();
-            se = new SoloEmployer();            
+            se = new SoloEmployer();
             this.dpmRepo = repositoryOfDepartments;
 
-            comboBoxDep.DataSource = repositoryOfDepartments.getComboBoxSource();
+            comboBoxDep.DataSource = dpmRepo.getComboBoxSource();
             comboBoxDep.DisplayMember = "Name";
             comboBoxDep.ValueMember = "IDdpm";
         }
@@ -36,12 +36,12 @@ namespace SoloDemo
             se = new SoloEmployer();
             employerRepository = new EmployerRepository();
 
-            InitializeComponent();            
-            this.SelectedEmpIndex = index;            
-            this.empRepo = employerRepository;            
-            this.dpmRepo = repositoryOfDepartments;            
+            InitializeComponent();
+            this.SelectedEmpIndex = index;
+            this.empRepo = employerRepository;
+            this.dpmRepo = repositoryOfDepartments;
 
-            se = employerRepository.SelectById(SelectedEmpIndex);            
+            se = employerRepository.SelectById(SelectedEmpIndex);
             labelID.Text = String.Format("ID of emloyer: {0}", SelectedEmpIndex);
             textBoxName1.Text = se.Name1;
             textBoxName2.Text = se.Name2;
@@ -50,22 +50,21 @@ namespace SoloDemo
             comboBoxDep.DataSource = dpmRepo.getComboBoxSource();
             comboBoxDep.DisplayMember = "Name";
             comboBoxDep.ValueMember = "IDdpm";
+            //comboBoxDep.SelectedItem
+
         }
 
         private void buttonSubmit_Click(object sender, EventArgs e)
         {
-            if (1 == 1 /*empRepo != null*/)
-            {
-                se.Name1 = textBoxName1.Text.ToString();
-                se.Name2 = textBoxName2.Text.ToString();
-                se.Name3 = textBoxName3.Text.ToString();
-                se.Email = textBoxEmail.Text.ToString();
-                se.IDdmp = Int32.Parse(comboBoxDep.SelectedValue.ToString());
+            se.Name1 = textBoxName1.Text.ToString();
+            se.Name2 = textBoxName2.Text.ToString();
+            se.Name3 = textBoxName3.Text.ToString();
+            se.Email = textBoxEmail.Text.ToString();
+            se.IDdmp = Int32.Parse(comboBoxDep.SelectedValue.ToString());
 
-                empRepo.Update(se);
-                empRepo.Save();
-                Close();
-            }
+            empRepo.Update(se);
+            empRepo.Save();
+            Close();
         }
 
 

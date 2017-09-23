@@ -170,6 +170,8 @@ namespace SoloDemo
 
         private void button1_Click(object sender, EventArgs e) //SEARCH IN DATAGRIDVIEW IN C#
         {
+            /* if refactor, then this should be in some library, already code duplication...*/
+
             int selectedItems = 0;
             empDataGridView.ClearSelection(); //cleaning previos search            
             empDataGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
