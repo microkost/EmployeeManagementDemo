@@ -283,41 +283,6 @@ namespace SoloDemo
             empRepo.Dispose();
         }
 
-
-        private void button1_Click(object sender, EventArgs e) //SEARCH IN DATAGRIDVIEW IN C#
-        {
-            /* if refactor, then this should be in some library, already code duplication...*/
-
-            int selectedItems = 0;
-            repDataGridView.ClearSelection(); //cleaning previos search            
-            repDataGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            repDataGridView.MultiSelect = true;
-
-            foreach (DataGridViewRow row in repDataGridView.Rows) //algorithm is checking cells in column order in every row in table
-            {
-                for (int columnIndex = 0; columnIndex < repDataGridView.Columns.Count; columnIndex++) //columns listing
-                {
-                    if (row.Cells[columnIndex] is DataGridViewTextBoxCell) //cant look for Combobox and others, only textboxes
-                    {
-                        if (row.Cells[columnIndex].Value.ToString().ToLower().Contains(textBoxSearch.Text.ToLower())) //removes case sensibility
-                        {
-                            columnIndex = row.Index;
-                            repDataGridView.Rows[columnIndex].Selected = true;
-                            selectedItems++;
-                            columnIndex++;
-                            break;
-                        }
-                    }
-                }
-            }
-
-            if (selectedItems == 0)
-            {
-                MessageBox.Show("Sorry, query '" + textBoxSearch.Text + "' wasn't found", "Search results");
-            }
-
-        }
-
         private void button2_Click(object sender, EventArgs e)
         {
             if (salariesPerMonth == null)
@@ -415,6 +380,39 @@ namespace SoloDemo
                 //System.Windows.MessageBox.Show(e2.Message, "Unable to print", MessageBoxButton.OK);
             }
 
+        }
+
+        private void buttonSearch_Click_1(object sender, EventArgs e)
+        {
+            /* if refactor, then this should be in some library, already code duplication...*/
+
+            int selectedItems = 0;
+            repDataGridView.ClearSelection(); //cleaning previos search            
+            repDataGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            repDataGridView.MultiSelect = true;
+
+            foreach (DataGridViewRow row in repDataGridView.Rows) //algorithm is checking cells in column order in every row in table
+            {
+                for (int columnIndex = 0; columnIndex < repDataGridView.Columns.Count; columnIndex++) //columns listing
+                {
+                    if (row.Cells[columnIndex] is DataGridViewTextBoxCell) //cant look for Combobox and others, only textboxes
+                    {
+                        if (row.Cells[columnIndex].Value.ToString().ToLower().Equals(textBoxSearch.Text.ToLower())) //removes case sensibility
+                        {
+                            columnIndex = row.Index;
+                            repDataGridView.Rows[columnIndex].Selected = true;
+                            selectedItems++;
+                            columnIndex++;
+                            break;
+                        }
+                    }
+                }
+            }
+
+            if (selectedItems == 0)
+            {
+                MessageBox.Show("Sorry, query '" + textBoxSearch.Text + "' wasn't found", "Search results");
+            }
         }
     }
 }
