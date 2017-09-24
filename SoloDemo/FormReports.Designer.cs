@@ -35,8 +35,14 @@
             this.button1 = new System.Windows.Forms.Button();
             this.textBoxSearch = new System.Windows.Forms.TextBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.tbStats = new System.Windows.Forms.TextBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.tbSalaStats = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.repDataGridView)).BeginInit();
             this.panel1.SuspendLayout();
+            this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // repDataGridView
@@ -49,13 +55,13 @@
             this.repDataGridView.BackgroundColor = System.Drawing.Color.IndianRed;
             this.repDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.repDataGridView.Cursor = System.Windows.Forms.Cursors.Default;
-            this.repDataGridView.Location = new System.Drawing.Point(0, 2);
+            this.repDataGridView.Location = new System.Drawing.Point(0, 82);
             this.repDataGridView.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.repDataGridView.Name = "repDataGridView";
             this.repDataGridView.ReadOnly = true;
             this.repDataGridView.RowTemplate.Height = 24;
             this.repDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.repDataGridView.Size = new System.Drawing.Size(1040, 442);
+            this.repDataGridView.Size = new System.Drawing.Size(1052, 362);
             this.repDataGridView.TabIndex = 0;
             // 
             // buttonRefresh
@@ -77,10 +83,10 @@
             this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.textBoxSearch);
             this.panel1.Controls.Add(this.buttonRefresh);
-            this.panel1.Location = new System.Drawing.Point(0, 450);
+            this.panel1.Location = new System.Drawing.Point(0, 262);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1040, 78);
+            this.panel1.Size = new System.Drawing.Size(1052, 78);
             this.panel1.TabIndex = 6;
             // 
             // label1
@@ -116,15 +122,55 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(1040, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1052, 24);
             this.menuStrip1.TabIndex = 7;
             this.menuStrip1.Text = "menuStrip1";
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.tbStats);
+            this.groupBox1.Location = new System.Drawing.Point(12, 449);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(513, 323);
+            this.groupBox1.TabIndex = 8;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Statistics";
+            // 
+            // tbStats
+            // 
+            this.tbStats.Location = new System.Drawing.Point(7, 22);
+            this.tbStats.Multiline = true;
+            this.tbStats.Name = "tbStats";
+            this.tbStats.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.tbStats.Size = new System.Drawing.Size(496, 295);
+            this.tbStats.TabIndex = 0;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.tbSalaStats);
+            this.groupBox2.Location = new System.Drawing.Point(531, 449);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(513, 323);
+            this.groupBox2.TabIndex = 9;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Salaries average";
+            // 
+            // tbSalaStats
+            // 
+            this.tbSalaStats.Location = new System.Drawing.Point(7, 22);
+            this.tbSalaStats.Multiline = true;
+            this.tbSalaStats.Name = "tbSalaStats";
+            this.tbSalaStats.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.tbSalaStats.Size = new System.Drawing.Size(496, 295);
+            this.tbSalaStats.TabIndex = 0;
             // 
             // FormReports
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1040, 522);
+            this.ClientSize = new System.Drawing.Size(1052, 784);
+            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.repDataGridView);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.menuStrip1);
@@ -136,6 +182,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.repDataGridView)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -150,5 +200,9 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox textBoxSearch;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.TextBox tbStats;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.TextBox tbSalaStats;
     }
 }

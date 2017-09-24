@@ -16,8 +16,8 @@ namespace SoloDemo
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormReports());
-            //Application.Run(new FormHome());
+            //Application.Run(new FormReports());
+            Application.Run(new FormHome());
         }
     }
 }

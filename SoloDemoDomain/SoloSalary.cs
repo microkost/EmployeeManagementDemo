@@ -15,5 +15,19 @@ namespace SoloDemoDomain
         [ForeignKey("Employer")]
         public int IDemp { get; set; }
         public virtual SoloEmployer Employer { get; set; }
+
+        public SoloSalary()
+        {
+            //check validity of solution with empty constructor
+        }
+
+        public SoloSalary(int IDsal, double amount, DateTime validFrom, DateTime validUntil, int IDemp)
+        {
+            this.IDsal = IDsal;
+            this.Amount = amount;
+            this.validFrom = validFrom;
+            this.validUntil = validUntil;
+            this.IDemp = IDemp;
+        }
     }
 }

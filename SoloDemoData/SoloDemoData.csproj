@@ -51,6 +51,7 @@
     <Compile Include="CompanyContext.cs" />
     <Compile Include="DepartmentRepository.cs" />
     <Compile Include="EmployerRepository.cs" />
+    <Compile Include="HumanItem.cs" />
     <Compile Include="IRepository.cs" />
     <Compile Include="Migrations\201709191654448_InitialCreate.cs" />
     <Compile Include="Migrations\201709191654448_InitialCreate.Designer.cs">

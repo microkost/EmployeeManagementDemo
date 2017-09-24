@@ -1,4 +1,5 @@
 ﻿using SoloDemoDomain;
+using SoloDemoData;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity.Migrations;
