@@ -5,6 +5,9 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Printing;
+using System.Globalization;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,6 +22,7 @@ namespace SoloDemo
         private SalaryRepository salRepo;
         private List<HumanItem> people;
         private const string dateTimeFormat = "d.MM.yyyy";   // Use this format
+        private Dictionary<DateTime, List<double>> salariesPerMonth;
 
         public FormReports()
         {
@@ -27,6 +31,8 @@ namespace SoloDemo
             empRepo = new EmployerRepository();
             salRepo = new SalaryRepository();
             people = new List<HumanItem>();
+            salariesPerMonth = new Dictionary<DateTime, List<double>>();
+
             RefreshGui();
         }
 
@@ -212,7 +218,11 @@ namespace SoloDemo
             tbSalaStats.AppendText(String.Format("Salaries from {0} to {1}\r\n", oldest.ToString(dateTimeFormat), newest.ToString(dateTimeFormat))); //should be sorted
 
             //income per month
-            Dictionary<DateTime, List<double>> salariesPerMonth = new Dictionary<DateTime, List<double>>();
+            if (salariesPerMonth == null)
+            {
+                salariesPerMonth = new Dictionary<DateTime, List<double>>();
+            }
+
             foreach (DateTime dt in monthsBetween(oldest, newest))
             {
                 foreach (HumanItem hi in people)
@@ -241,7 +251,7 @@ namespace SoloDemo
             foreach (KeyValuePair<DateTime, List<double>> kvp in salariesPerMonth)
             {
                 double average = 0;
-                if(kvp.Value.Count > 0)
+                if (kvp.Value.Count > 0)
                 {
                     average = kvp.Value.Average();
                 }
@@ -304,6 +314,105 @@ namespace SoloDemo
             if (selectedItems == 0)
             {
                 MessageBox.Show("Sorry, query '" + textBoxSearch.Text + "' wasn't found", "Search results");
+            }
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if (salariesPerMonth == null)
+            {
+                RefreshStats();
+            }
+
+            StringBuilder sb = new StringBuilder();
+            string delimiter = System.Globalization.CultureInfo.CurrentCulture.TextInfo.ListSeparator;
+
+            foreach (KeyValuePair<DateTime, List<double>> kvp in salariesPerMonth)
+            {
+                double average = 0;
+                if (kvp.Value.Count > 0)
+                {
+                    average = kvp.Value.Average();
+                }
+
+                sb.Append(kvp.Key.ToString("MM.yyyy") + delimiter + Math.Round(average, 2) + "\r\n");
+            }
+
+            //try-catch!
+
+            saveFileDialog1.FileName = "report";
+            saveFileDialog1.DefaultExt = "csv";
+            saveFileDialog1.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+            saveFileDialog1.Filter = "csv files (*.csv)|";
+            saveFileDialog1.ShowDialog();
+            string name = saveFileDialog1.FileName;
+            File.WriteAllText(name, sb.ToString());
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {            
+            printDialog1.ShowDialog();
+            //if(printDialog1.DialogResult != DialogResult.OK) { return; }
+            Print(tbSalaStats.Text);
+        }       
+
+        private void Print(string thetext)
+        {
+            try //source: https://stackoverflow.com/questions/44979794/how-to-print-a-long-string-into-multiple-pages-in-c-sharp
+            {
+                System.Drawing.Printing.PrintDocument p = new System.Drawing.Printing.PrintDocument();
+
+                var font = new Font("Times New Roman", 12);
+                var brush = new System.Drawing.SolidBrush(System.Drawing.Color.Black);
+
+                // what still needs to be printed
+                var remainingText = thetext;
+
+                p.PrintPage += delegate (object sender1, System.Drawing.Printing.PrintPageEventArgs e1)
+                {
+                    int charsFitted, linesFilled;
+
+                    // measure how many characters will fit of the remaining text
+
+                    var realsize = e1.Graphics.MeasureString(
+                            remainingText,
+                            font,
+                            e1.MarginBounds.Size,
+                            System.Drawing.StringFormat.GenericDefault,
+                            out charsFitted,  // this will return what we need
+                            out linesFilled);
+
+                    // take from the remainingText what we're going to print on this page
+                    var fitsOnPage = remainingText.Substring(0, charsFitted);
+                    // keep what is not printed on this page 
+                    remainingText = remainingText.Substring(charsFitted).Trim();
+
+                    // print what fits on the page
+                    e1.Graphics.DrawString(
+                            fitsOnPage,
+                            font,
+                            brush,
+                            e1.MarginBounds);
+
+                    // if there is still text left, tell the PrintDocument it needs to call 
+                    // PrintPage again.
+                    e1.HasMorePages = remainingText.Length > 0;
+                };
+
+                System.Windows.Forms.PrintDialog pd = new System.Windows.Forms.PrintDialog();
+                pd.Document = p;
+                DialogResult result = pd.ShowDialog();
+
+                if (result == System.Windows.Forms.DialogResult.OK)
+                {
+                    p.Print();
+                }
+
+            }
+            catch
+            {
+                //System.Windows.MessageBox.Show(e2.Message, "Unable to print", MessageBoxButton.OK);
             }
 
         }

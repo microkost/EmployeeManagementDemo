@@ -15,8 +15,7 @@ namespace SoloDemo
         static void Main()
         {
             Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new FormReports());
+            Application.SetCompatibleTextRenderingDefault(false);            
             Application.Run(new FormHome());
         }
     }
